@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Hello World | 日月星辰海-前端永不止境</title>
+<title>使用CSS实现三栏自适应布局（两边宽度固定，中间自适应） | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -130,9 +130,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Hello World">
+        <h1 id="使用CSS实现三栏自适应布局（两边宽度固定，中间自适应）">
             
-	            Hello World
+	            使用CSS实现三栏自适应布局（两边宽度固定，中间自适应）
             
         </h1>
         <div class="post-meta">
@@ -160,7 +160,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/09</span>
+            <span class="date-meta">2018/05/14</span>
         </span>
     
 </div>
@@ -170,15 +170,16 @@
     </div>
     
     <div class="post-body post-content">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>所谓三列自适应布局指的是两边定宽，中间block宽度自适应。这道题在今年网易内推前端工程师面试的时候也被问到。 我这里主要分为两大类，一类是基于position传统的实现，一类是基于css3新特性弹性盒模型布局实现。</p>
+<h2 id="1-基于传统的position和margin等属性进行布局"><a href="#1-基于传统的position和margin等属性进行布局" class="headerlink" title="1. 基于传统的position和margin等属性进行布局"></a>1. 基于传统的position和margin等属性进行布局</h2><p>这里也分为三种方法，分别为绝对定位法，圣杯布局，自身浮动法。</p>
+<h3 id="a-绝对定位法"><a href="#a-绝对定位法" class="headerlink" title="a.绝对定位法"></a>a.绝对定位法</h3><p>绝对定位法原理是将左右两边使用absolute定位，因为绝对定位使其脱离文档流，后面的center会自然流动到他们上面，然后使用margin属性，留出左右元素的宽度，既可以使中间元素自适应屏幕宽度。<br>代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;  </span><br><span class="line">&lt;html&gt;  </span><br><span class="line">    &lt;head&gt;  </span><br><span class="line">        &lt;meta charset=<span class="string">"UTF-8"</span>&gt;  </span><br><span class="line">        &lt;title&gt;layout_box&lt;/title&gt;  </span><br><span class="line">        &lt;link rel=<span class="string">"stylesheet"</span> <span class="built_in">type</span>=<span class="string">"text/css"</span> href=<span class="string">"../css/layout_box.css"</span>&gt;  </span><br><span class="line">    &lt;/head&gt;  </span><br><span class="line">    &lt;body&gt;  </span><br><span class="line">        &lt;h3&gt;实现三列宽度自适应布局&lt;/h3&gt;  </span><br><span class="line">        &lt;div id = <span class="string">"left"</span>&gt;我是左边&lt;/div&gt;  </span><br><span class="line">        &lt;div id = <span class="string">"right"</span>&gt;我是右边&lt;/div&gt;  </span><br><span class="line">        &lt;div id = <span class="string">"center"</span>&gt;我是中间&lt;/div&gt;  </span><br><span class="line">    &lt;/body&gt;  </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html,body&#123; margin: 0px;width: 100%; &#125;  </span><br><span class="line">h3&#123;height: 100px;margin:20px 0 0;&#125;  </span><br><span class="line"><span class="comment">#left,#right&#123;width: 200px;height: 200px; background-color: #ffe6b8;position: absolute;top:120px;&#125;  </span></span><br><span class="line"><span class="comment">#left&#123;left:0px;&#125;  </span></span><br><span class="line"><span class="comment">#right&#123;right: 0px;&#125;  </span></span><br><span class="line"><span class="comment">#center&#123;margin:2px 210px ;background-color: #eee;height: 200px; &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>该法布局的好处，三个div顺序可以任意改变。不足是 因为绝对定位，所以如果页面上还有其他内容，top的值需要小心处理，最好能够对css样式进行一个初始化，就像在上面例子中加了一个标题，如果不对样式进行初始化，则两边和中间的值会对不齐。 另外，随着浏览器窗口缩小，小于200px的时候，会发生压缩。<br>结果如图，可以看到中间栏宽度随着屏幕大小伸缩。</p>
+<h3 id="b-使用自身浮动法"><a href="#b-使用自身浮动法" class="headerlink" title="b.使用自身浮动法"></a>b.使用自身浮动法</h3><p> 自身浮动法的原理就是使用对左右使用分别使用float:left和float:right，float使左右两个元素脱离文档流，中间元素正常在正常文档流中，使用margin指定左右外边距对其进行一个定位<br>HTML代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;使用自身浮动法定位&lt;/h3&gt;  </span><br><span class="line">&lt;div id = <span class="string">"left_self"</span>&gt;我是左边&lt;/div&gt;  </span><br><span class="line">&lt;div id = <span class="string">"right_self"</span>&gt;我是右边&lt;/div&gt;  </span><br><span class="line">&lt;div id = <span class="string">"center_self"</span>&gt;我是中间&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#left_self,#right_self&#123; width: 200px;height: 200px; background-color: #ffe6b8 &#125;  </span></span><br><span class="line"><span class="comment">#left_self &#123;float: left;&#125;  </span></span><br><span class="line"><span class="comment">#right_self&#123;float: right;&#125;  </span></span><br><span class="line"><span class="comment">#center_self&#123;margin: 0 210px;height: 200px; background-color: #a0b3d6&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>该布局法的好处是受外界影响小，但是不足是 三个元素的顺序，center一定要放在最后，这是和绝对定位不一样的地方，center占据文档流位置，所以一定要放在最后，左右两个元素位置没有关系。当浏览器窗口很小的时候，右边元素会被击倒下一行</p>
+<h3 id="c-圣杯布局"><a href="#c-圣杯布局" class="headerlink" title="c.圣杯布局"></a>c.圣杯布局</h3><p>圣杯布局的原理是margin负值法。使用圣杯布局首先需要在center元素外部包含一个div，包含div需要设置float属性使其形成一个BFC，并设置宽度，并且这个宽度要和left块的margin负值进行配合.<br>HTML代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;使用margin负值法进行布局&lt;/h3&gt;  </span><br><span class="line">&lt;div id = <span class="string">"wrap"</span>&gt;  </span><br><span class="line">    &lt;div id = <span class="string">"center"</span>&gt;&lt;/div&gt;  </span><br><span class="line">&lt;/div&gt;  </span><br><span class="line">&lt;div id = <span class="string">"left_margin"</span>&gt;&lt;/div&gt;  </span><br><span class="line">&lt;div id = <span class="string">"right_margin"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#wrap&#123; width: 100%;height: 100px; background-color: #fff;float: left;&#125;  </span></span><br><span class="line"><span class="comment">#wrap #center&#123; margin:0 210px; height: 100px;background-color: #ffe6b8; &#125;  </span></span><br><span class="line"><span class="comment">#left_margin,#right_margin&#123; float: left;width: 200px;height: 100px;background-color: darkorange &#125;  </span></span><br><span class="line"><span class="comment">#left_margin &#123;margin-left: -100%; background-color: lightpink&#125;  </span></span><br><span class="line"><span class="comment">#right_margin&#123;margin-left: -200px;&#125;</span></span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -196,11 +197,11 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/05/10/如何搭建博客/" class="pre-post btn btn-default" title='如何搭建博客--用hexo+github搭建个人博客'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">如何搭建博客--用hexo+github搭建个人博客</span>
-        </a>
     
+        <a href="/2018/05/14/HTML5-新特性，-语义化/" class="next-post btn btn-default" title='HTML5 新特性 语义化'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">HTML5 新特性 语义化</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
     
 </div>
 
