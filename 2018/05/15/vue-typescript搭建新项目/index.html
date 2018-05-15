@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>vue + typescript搭建新项目 | 日月星辰海-前端永不止境</title>
+<title>vue + typescript + element-ui搭建新项目 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -130,9 +130,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="vue + typescript搭建新项目">
+        <h1 id="vue + typescript + element-ui搭建新项目">
             
-	            vue + typescript搭建新项目
+	            vue + typescript + element-ui搭建新项目
             
         </h1>
         <div class="post-meta">
@@ -220,9 +220,10 @@
 <h3 id="开始修改App-vue文件"><a href="#开始修改App-vue文件" class="headerlink" title="开始修改App.vue文件"></a>开始修改App.vue文件</h3><p>在script 标签上加上 lang=”ts”, 意思是让webpack将这段代码识别为typescript 而非javascript<br>修改vue组件的构造方式( 跟react组件写法有点类似, 详见官方 )， 如下图<br>用vue-property-decorator语法改造之前代码</p>
 <p>当然也可以直接复制下面的代码替换就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">"./assets/logo.png"</span>&gt;</span><br><span class="line">    &lt;router-view/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=<span class="string">"ts"</span>&gt;</span><br><span class="line">import Vue from <span class="string">'vue'</span></span><br><span class="line">import Component from <span class="string">'vue-class-component'</span></span><br><span class="line"></span><br><span class="line">@Component(&#123;&#125;)</span><br><span class="line"><span class="built_in">export</span> default class App extends Vue &#123;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"><span class="comment">#app &#123;</span></span><br><span class="line">  font-family: <span class="string">'Avenir'</span>, Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: <span class="comment">#2c3e50;</span></span><br><span class="line">  margin-top: 60px;</span><br></pre></td></tr></table></figure></p>
 <p>接下来用相同的方式修改HelloWorld.vue即可</p>
+<h2 id="引用element-ui"><a href="#引用element-ui" class="headerlink" title="引用element-ui"></a>引用<a href="http://element.eleme.io" target="_blank" rel="noopener">element-ui</a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install element-ui --save</span><br></pre></td></tr></table></figure>
 <h2 id="npm-run-dev"><a href="#npm-run-dev" class="headerlink" title="npm run dev"></a>npm run dev</h2><p>这个时候运行项目就应该能正常跑起来了</p>
 <p>到这里我们的配置就已经结束了</p>
-<p>如果按照文章没有配置出来，可以参考此repo vue-typescript-starter</p>
+<p>如果按照文章没有配置出来，可以参考此repo <a href="https://github.com/xioax/vue-typescript-element-ui" target="_blank" rel="noopener">vue-typescript-starter</a></p>
 
     </div>
 
