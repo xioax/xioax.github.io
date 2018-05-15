@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>如何搭建博客--用hexo+github搭建个人博客 | 日月星辰海-前端永不止境</title>
+<title>详解call(),apply()和bind() | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -131,9 +131,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="如何搭建博客--用hexo+github搭建个人博客">
+        <h1 id="详解call(),apply()和bind()">
             
-	            如何搭建博客--用hexo+github搭建个人博客
+	            详解call(),apply()和bind()
             
         </h1>
         <div class="post-meta">
@@ -161,7 +161,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/10</span>
+            <span class="date-meta">2018/05/15</span>
         </span>
     
 </div>
@@ -171,35 +171,7 @@
     </div>
     
     <div class="post-body post-content">
-        <h5 id="相关步骤："><a href="#相关步骤：" class="headerlink" title="相关步骤："></a>相关步骤：</h5><p>1、安装Node.js和配置好Node.js环境，打开cmd命令行，这里我用的是git(git安装和git配置环境这里就不作说明) 成功界面如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br><span class="line">5.8.0</span><br></pre></td></tr></table></figure></p>
-<p>2、检查一下git安装成功，界面如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git -v</span><br><span class="line">2.13.2.windows.1</span><br></pre></td></tr></table></figure></p>
-<p>3、Github账户注册和新建项目，项目必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。并且需要勾选Initialize this repository with a README<br><img src="/img/github.png" alt="logo"></p>
-<p>在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。</p>
-<p>4、安装Hexo，在自己认为合适的地方创个文件夹，我是在F盘建了一个blog文件夹。然后通过命令行进入到该文件夹里面<br><img src="/img/stepone.png" alt="stepone"></p>
-<p>输入npm install hexo -g，开始安装Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -g</span><br></pre></td></tr></table></figure></p>
-<p>输入hexo -v，检查hexo是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure></p>
-<p>输入hexo init，初始化该文件夹（有点漫长的等待。。。）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure></p>
-<p>看到后面的“Start blogging with Hexo！”，就初始化成功。</p>
-<p>输入npm install，安装所需要的组件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>输入hexo g，首次体验Hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure></p>
-<p>输入hexo s，开启服务器，访问该网址，正式体验Hexo<br><img src="/img/step2.png" alt="stepone"></p>
-<p>那么出现如下图就成功了<br><img src="/img/hexo.png" alt="stepone"></p>
-<p>5、将Hexo与Github page联系起来，设置Git的user name和email（如果是第一次的话）<br><img src="/img/step3.png" alt="stepone"><br><img src="/img/step4.png" alt="stepone"></p>
-<p>输入cd ~/.ssh，检查是否由.ssh的文件夹<br><img src="/img/step6.png" alt="stepone"></p>
-<p>输入ssh-keygen -t rsa -C “<a href="mailto:2422093447@qq.com" target="_blank" rel="noopener">2422093447@qq.com</a>”，连续三个回车，生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub（默认存储路径是：C:\Users\Administrator.ssh）。<br><img src="/img/step7.png" alt="stepone"></p>
-<p>输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent<br><img src="/img/step8.png" alt="stepone"></p>
-<p>再输入ssh-add ~/.ssh/id_rsa，添加生成的SSH key到ssh-agent<br><img src="/img/step9.png" alt="stepone"></p>
-<p>登录Github，点击头像下的settings，添加ssh<br><img src="/img/step10.png" alt="stepone"></p>
-<p>新建一个new ssh key，将id_rsa.pub文件里的内容复制上去<br><img src="/img/step11.png" alt="stepone"></p>
-<p>输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
-<p>6、配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾）<br><img src="/img/step12.png" alt="stepone"></p>
-<p>repo值是你在github项目里的ssh（右下角）<br><img src="/img/step13.png" alt="stepone"></p>
-<p>7、新建一篇博客，在cmd执行命令：hexo new post “博客名”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post <span class="string">'newblogpage'</span></span><br></pre></td></tr></table></figure></p>
-<p>这时候在文件夹_posts目录下将会看到已经创建的文件<br><img src="/img/newpage.png" alt="stepone"></p>
-<p>在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git –save<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>使用编辑器编好文章，那么就可以使用命令：hexo d -g，生成以及部署了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure></p>
-<p>部署成功后访问你的地址：http://用户名.github.io。那么将看到生成的文章<br><img src="/img/step14.png" alt="stepone"></p>
-
+        
     </div>
 
     <div class="post-footer">
@@ -216,15 +188,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/05/14/HTML5-新特性，-语义化/" class="pre-post btn btn-default" title='HTML5 新特性 语义化'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">HTML5 新特性 语义化</span>
-        </a>
     
-    
-        <a href="/2018/05/09/hello-world/" class="next-post btn btn-default" title='Hello World'>
+        <a href="/2018/05/15/vue-typescript搭建新项目/" class="next-post btn btn-default" title='vue + typescript + element-ui搭建新项目'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Hello World</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">vue + typescript + element-ui搭建新项目</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
