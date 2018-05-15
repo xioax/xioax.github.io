@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Archives | 日月星辰海-前端永不止境</title>
+<title>CSS 优先级 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -126,45 +126,101 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-    	<h1 class="info">年 月</h1>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="CSS 优先级">
+            
+	            CSS 优先级
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
         
-          <li class="post-items" _href="/2018/05/15/priority/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/15/priority/"> CSS 优先级 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/14/threeauto/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/14/threeauto/"> 使用CSS实现三栏自适应布局（两边宽度固定，中间自适应） </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/14/HTML5-新特性，-语义化/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/14/HTML5-新特性，-语义化/"> HTML5 新特性 语义化 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/10/如何搭建博客/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/10/如何搭建博客/"> 如何搭建博客--用hexo+github搭建个人博客 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/09/hello-world/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/09/hello-world/"> Hello World </a>
-            </h3>  
-          </li>
-        
-    </ul>
-  </div>
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/05/15</span>
+        </span>
+    
 </div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="CSS优先级顺序"><a href="#CSS优先级顺序" class="headerlink" title="CSS优先级顺序"></a>CSS优先级顺序</h2><h3 id="列出一份优先级逐渐增加的选择器列表"><a href="#列出一份优先级逐渐增加的选择器列表" class="headerlink" title="列出一份优先级逐渐增加的选择器列表"></a>列出一份优先级逐渐增加的选择器列表</h3><p>*1.通用选择器。</p>
+<p>*2.元素（类型）选择器。</p>
+<p>*3.类选择器。</p>
+<p>*4.属性选择器。</p>
+<p>*5.伪类。</p>
+<p>*6.Id选择器。</p>
+<p>*7.内联样式。</p>
+<h3 id="选择器的优先权解释说明"><a href="#选择器的优先权解释说明" class="headerlink" title="选择器的优先权解释说明"></a>选择器的优先权解释说明</h3><p>1.内联样式表的权值最高 1000。</p>
+<p>2.ID 选择器的权值为 100。</p>
+<p>3.Class 类选择器的权值为 10。</p>
+<p>4.HTML 标签（类型）选择器的权值为 1。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">   &lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">      <span class="comment">#redP p &#123;</span></span><br><span class="line">          </span><br><span class="line">          color:<span class="comment">#F00;  </span></span><br><span class="line">      &#125;</span><br><span class="line"> </span><br><span class="line">      <span class="comment">#redP .red em &#123;</span></span><br><span class="line">          </span><br><span class="line">          color:<span class="comment">#00F; </span></span><br><span class="line"> </span><br><span class="line">      &#125;</span><br><span class="line"> </span><br><span class="line">      <span class="comment">#redP p span em &#123;</span></span><br><span class="line">          </span><br><span class="line">          color:<span class="comment">#FF0;</span></span><br><span class="line">      &#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">     &lt;divid=<span class="string">"redP"</span>&gt;</span><br><span class="line">        &lt;pclass=<span class="string">"red"</span>&gt;red</span><br><span class="line">          &lt;span&gt;&lt;em&gt;em red&lt;/em&gt;&lt;/span&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;red&lt;/p&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="CSS-优先级规则："><a href="#CSS-优先级规则：" class="headerlink" title="CSS 优先级规则："></a>CSS 优先级规则：</h2><h3 id="选择器都有一个权值，权值越大越优先。"><a href="#选择器都有一个权值，权值越大越优先。" class="headerlink" title="选择器都有一个权值，权值越大越优先。"></a>选择器都有一个权值，权值越大越优先。</h3><p>1.当权值相等时，后出现的样式表设置要优于先出现的样式表设置。</p>
+<p>2.创作者的规则高于浏览者：即网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式。</p>
+<p>3.继承的CSS 样式不如后来指定的CSS 样式</p>
+<p>4.在同一组属性设置中标有“!important”规则的优先级最大。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">   &lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    <span class="comment">#redP p&#123;</span></span><br><span class="line">       </span><br><span class="line">       color:<span class="comment">#00f !important; </span></span><br><span class="line">       color:<span class="comment">#f00;</span></span><br><span class="line">    &#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">    &lt;divid=<span class="string">"redP"</span>&gt;</span><br><span class="line">      &lt;p&gt;color&lt;/p&gt;</span><br><span class="line">      &lt;p&gt;color&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/05/14/threeauto/" class="next-post btn btn-default" title='使用CSS实现三栏自适应布局（两边宽度固定，中间自适应）'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">使用CSS实现三栏自适应布局（两边宽度固定，中间自适应）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
 
 
 
