@@ -36,7 +36,7 @@ html {
 body {
   color: #505050;
   line-height: 1.75em;
-  background: url(img/bg.png) repeat;
+  background: url(../img/bg.png) repeat;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
