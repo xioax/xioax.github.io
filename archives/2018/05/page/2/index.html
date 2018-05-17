@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>JS的for循环总是弹出最后一个值得解决方法 | 日月星辰海-前端永不止境</title>
+<title>Archives: 2018/5 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -127,95 +127,27 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="JS的for循环总是弹出最后一个值得解决方法">
-            
-	            JS的for循环总是弹出最后一个值得解决方法
-            
-        </h1>
-        <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/ ">
-             
-        </a>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-            
-        </span>
-    </span>
-    
-
-    
+                <main class="col-md-8 main-content ">
+                    <div id="main">
+  <div id="post-list">
+    <ul class="archives-post-list">
+    	<h1 class="info">2018年 5月</h1>
         
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/16</span>
-        </span>
-    
+          <li class="post-items" _href="/2018/05/09/hello-world/">
+            <h3 class="post-item-title">
+            	<a href="/2018/05/09/hello-world/"> Hello World </a>
+            </h3>  
+          </li>
+        
+    </ul>
+  </div>
 </div>
 
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <h2 id="JS的for循环总是弹出最后一个值得解决方法"><a href="#JS的for循环总是弹出最后一个值得解决方法" class="headerlink" title="JS的for循环总是弹出最后一个值得解决方法"></a>JS的for循环总是弹出最后一个值得解决方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;  </span><br><span class="line">   &lt;ul&gt;  </span><br><span class="line">       &lt;li&gt;苹果&lt;/li&gt;  </span><br><span class="line">       &lt;li&gt;香蕉&lt;/li&gt;  </span><br><span class="line">       &lt;li&gt;西瓜&lt;/li&gt;  </span><br><span class="line">       &lt;li&gt;橘子&lt;/li&gt;  </span><br><span class="line">       &lt;li&gt;葡萄&lt;/li&gt;  </span><br><span class="line">   &lt;/ul&gt;  </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="现在我想得到标签内的索引和内容，你也许刷刷的写下以下代码："><a href="#现在我想得到标签内的索引和内容，你也许刷刷的写下以下代码：" class="headerlink" title="现在我想得到标签内的索引和内容，你也许刷刷的写下以下代码："></a>现在我想得到标签内的索引和内容，你也许刷刷的写下以下代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var els = document.getElementsByTagName(&quot;li&quot;); </span><br><span class="line">for (i = 0; i &lt; els.length; i++) &#123;  </span><br><span class="line">  var el = els[i];  </span><br><span class="line">  var text = el.innerHTML;  </span><br><span class="line">  el.onclick = function () &#123;  </span><br><span class="line">      console.log(i + &quot;.&quot; + text)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="但是结果却不尽人意，总是弹出“5-葡萄”，比较好的解决方法有以下几种："><a href="#但是结果却不尽人意，总是弹出“5-葡萄”，比较好的解决方法有以下几种：" class="headerlink" title="但是结果却不尽人意，总是弹出“5.葡萄”，比较好的解决方法有以下几种："></a>但是结果却不尽人意，总是弹出“5.葡萄”，比较好的解决方法有以下几种：</h3><h3 id="1、使用闭包"><a href="#1、使用闭包" class="headerlink" title="1、使用闭包"></a>1、使用闭包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var els = document.getElementsByTagName(&apos;li&apos;)</span><br><span class="line">for (var i = 0; i &lt;els.length; i++) &#123;</span><br><span class="line">    var el = els[i]</span><br><span class="line">    el.onclick=function(i)&#123;</span><br><span class="line">       var text = el.innerHTML</span><br><span class="line">       return function()&#123;</span><br><span class="line">          console.log(i + &apos;.&apos; + text)</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-或者引入jquery"><a href="#2-或者引入jquery" class="headerlink" title="2.或者引入jquery"></a>2.或者引入jquery</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> $(&apos;ul li&apos;).click(function() &#123;</span><br><span class="line">    var index = $(this).index();</span><br><span class="line">    var text = $(this).text();</span><br><span class="line">    console.log(index + &apos;.&apos; + text)</span><br><span class="line"> &#125;);</span><br><span class="line"></span><br><span class="line"> $(&quot;ul&quot;).on(&quot;click&quot;, &quot;li&quot;, function()&#123;  </span><br><span class="line">    var index = $(this).index();  </span><br><span class="line">    var text = $(this).html();  </span><br><span class="line">    alert(index + &quot;.&quot; + text);  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-    </div>
-
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
-            
+    <nav class="pagination" role="navigation">
+        <div id="page-nav">
+            <a class="extend prev" rel="prev" href="/archives/2018/05/"><i class='fa fa-angle-left'></i></a><a class="page-number" href="/archives/2018/05/">1</a><span class="page-number current">2</span>
         </div>
-        <div>
-            
-        </div>
-    </div>
-</article>
-
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/2018/05/16/React-Electron-antd-Less集成环境配置/" class="pre-post btn btn-default" title='React+Electron+antd+Less集成环境配置'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">React+Electron+antd+Less集成环境配置</span>
-        </a>
-    
-    
-        <a href="/2018/05/16/对闭包的理解/" class="next-post btn btn-default" title='对闭包的理解'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">对闭包的理解</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
-</div>
-
-
-    <div id="comments">
-        
-	<!--PC和WAP自适应版-->
-<div id="SOHUCS"></div>
-<script type="text/javascript">
-	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
-	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
-</script>	
-
-    </div>
+    </nav>
 
 
 
