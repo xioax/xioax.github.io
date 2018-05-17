@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>CSS 优先级 | 日月星辰海-前端永不止境</title>
+<title>overflow:hidden用法 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -131,9 +131,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="CSS 优先级">
+        <h1 id="overflow:hidden用法">
             
-	            CSS 优先级
+	            overflow:hidden用法
             
         </h1>
         <div class="post-meta">
@@ -161,7 +161,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/15</span>
+            <span class="date-meta">2018/05/17</span>
         </span>
     
 </div>
@@ -171,31 +171,16 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="CSS优先级顺序"><a href="#CSS优先级顺序" class="headerlink" title="CSS优先级顺序"></a>CSS优先级顺序</h2><h3 id="列出一份优先级逐渐增加的选择器列表"><a href="#列出一份优先级逐渐增加的选择器列表" class="headerlink" title="列出一份优先级逐渐增加的选择器列表"></a>列出一份优先级逐渐增加的选择器列表</h3><ul>
-<li><p>1.通用选择器。</p>
-</li>
-<li><p>2.元素（类型）选择器。</p>
-</li>
-<li><p>3.类选择器。</p>
-</li>
-<li><p>4.属性选择器。</p>
-</li>
-<li><p>5.伪类。</p>
-</li>
-<li><p>6.Id选择器。</p>
-</li>
-<li><p>7.内联样式。</p>
-</li>
-</ul>
-<h3 id="选择器的优先权解释说明"><a href="#选择器的优先权解释说明" class="headerlink" title="选择器的优先权解释说明"></a>选择器的优先权解释说明</h3><p>1.内联样式表的权值最高 1000。</p>
-<p>2.ID 选择器的权值为 100。</p>
-<p>3.Class 类选择器的权值为 10。</p>
-<p>4.HTML 标签（类型）选择器的权值为 1。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">   &lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">      <span class="comment">#redP p &#123;</span></span><br><span class="line">          </span><br><span class="line">          color:<span class="comment">#F00;  </span></span><br><span class="line">      &#125;</span><br><span class="line"> </span><br><span class="line">      <span class="comment">#redP .red em &#123;</span></span><br><span class="line">          </span><br><span class="line">          color:<span class="comment">#00F; </span></span><br><span class="line"> </span><br><span class="line">      &#125;</span><br><span class="line"> </span><br><span class="line">      <span class="comment">#redP p span em &#123;</span></span><br><span class="line">          </span><br><span class="line">          color:<span class="comment">#FF0;</span></span><br><span class="line">      &#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">     &lt;divid=<span class="string">"redP"</span>&gt;</span><br><span class="line">        &lt;pclass=<span class="string">"red"</span>&gt;red</span><br><span class="line">          &lt;span&gt;&lt;em&gt;em red&lt;/em&gt;&lt;/span&gt;</span><br><span class="line">       &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;red&lt;/p&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="CSS-优先级规则："><a href="#CSS-优先级规则：" class="headerlink" title="CSS 优先级规则："></a>CSS 优先级规则：</h2><h3 id="选择器都有一个权值，权值越大越优先。"><a href="#选择器都有一个权值，权值越大越优先。" class="headerlink" title="选择器都有一个权值，权值越大越优先。"></a>选择器都有一个权值，权值越大越优先。</h3><p>1.当权值相等时，后出现的样式表设置要优于先出现的样式表设置。</p>
-<p>2.创作者的规则高于浏览者：即网页编写者设置的CSS 样式的优先权高于浏览器所设置的样式。</p>
-<p>3.继承的CSS 样式不如后来指定的CSS 样式</p>
-<p>4.在同一组属性设置中标有“!important”规则的优先级最大。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">   &lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    <span class="comment">#redP p&#123;</span></span><br><span class="line">       </span><br><span class="line">       color:<span class="comment">#00f !important; </span></span><br><span class="line">       color:<span class="comment">#f00;</span></span><br><span class="line">    &#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">    &lt;divid=<span class="string">"redP"</span>&gt;</span><br><span class="line">      &lt;p&gt;color&lt;/p&gt;</span><br><span class="line">      &lt;p&gt;color&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-
+        <h2 id="overflow-hidden用法，不仅仅是隐藏溢出"><a href="#overflow-hidden用法，不仅仅是隐藏溢出" class="headerlink" title="overflow: hidden用法，不仅仅是隐藏溢出"></a>overflow: hidden用法，不仅仅是隐藏溢出</h2><p>overflow:hidden是大家常用到的CSS样式，但是大多数人对这个样式的理解仅仅局限于隐藏溢出，而对于清除浮动这个含义不是很了解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">        #div1&#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            /*height: 50px;*/</span><br><span class="line">            padding: 10px 20px 20px 10px;</span><br><span class="line">            background: red;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line">        #div2&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background: green;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;div1&quot; &gt;</span><br><span class="line">    &lt;div id=&quot;div2&quot; &gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图："><a href="#图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图：" class="headerlink" title="图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图："></a>图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图：</h3><p><img src="/img/tu1.png" alt="logo"></p>
+<p>当父div没有规定height值，子div浮动后，父div只剩下padding-top+padding-bottom的30px.</p>
+<p>如何让子div再次将父div的高度撑开呢？固然将父div也浮动起来是比较常用的做法，其实还可以使用overflower:hidden来清除浮动带来的影响。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    /*height: 50px;*/</span><br><span class="line">    padding: 10px 20px 20px 10px;</span><br><span class="line">    background: red;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，我们以前用的最多的还是使用overflow:hidden来隐藏子元素相对于父元素的超界溢出，如下所示。<br><img src="/img/tu2.png" alt="logo"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px 20px 20px 10px;</span><br><span class="line">    background: red;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>给父div加上固定高度后，再使用overflow: hidden将会隐藏掉子元素超出的那一部分，如下图：</p>
+<h3 id="因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow-hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。"><a href="#因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow-hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。" class="headerlink" title="因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow: hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。"></a>因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow: hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。</h3><h3 id="当父元素自身设置了height属性值，则在父元素使用overflow-hidden可以使子元素超出父元素的那部分隐藏。"><a href="#当父元素自身设置了height属性值，则在父元素使用overflow-hidden可以使子元素超出父元素的那部分隐藏。" class="headerlink" title="当父元素自身设置了height属性值，则在父元素使用overflow: hidden可以使子元素超出父元素的那部分隐藏。"></a>当父元素自身设置了height属性值，则在父元素使用overflow: hidden可以使子元素超出父元素的那部分隐藏。</h3>
     </div>
 
     <div class="post-footer">
@@ -212,15 +197,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/05/15/vue-typescript搭建新项目/" class="pre-post btn btn-default" title='vue + typescript + element-ui搭建新项目'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">vue + typescript + element-ui搭建新项目</span>
-        </a>
     
-    
-        <a href="/2018/05/14/threeauto/" class="next-post btn btn-default" title='使用CSS实现三栏自适应布局（两边宽度固定，中间自适应）'>
+        <a href="/2018/05/17/js创建对象的多种形式/" class="next-post btn btn-default" title='js创建对象的多种形式'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">使用CSS实现三栏自适应布局（两边宽度固定，中间自适应）</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">js创建对象的多种形式</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
