@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>对闭包的理解 | 日月星辰海-前端永不止境</title>
+<title>attribute和property之间的区别 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -131,9 +131,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="对闭包的理解">
+        <h1 id="attribute和property之间的区别">
             
-	            对闭包的理解
+	            attribute和property之间的区别
             
         </h1>
         <div class="post-meta">
@@ -161,7 +161,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/16</span>
+            <span class="date-meta">2018/05/25</span>
         </span>
     
 </div>
@@ -171,25 +171,20 @@
     </div>
     
     <div class="post-body post-content">
-        <h3 id="1、变量作用域"><a href="#1、变量作用域" class="headerlink" title="1、变量作用域"></a>1、变量作用域</h3><p>要理解闭包，首先要理解javascript的特殊的变量作用域。</p>
-<p>变量的作用域无非就两种：全局变量和局部变量。</p>
-<p>javascript语言的特别之处就在于：<code>函数内部可以直接读取全局变量，但是在函数外部无法读取函数内部的局部变量。</code></p>
-<p>注意点：<code>在函数内部声明变量的时候，一定要使用var命令。</code>如果不用的话，你实际上声明的是一个全局变量！</p>
-<h3 id="2、如何从外部读取函数内部的局部变量？"><a href="#2、如何从外部读取函数内部的局部变量？" class="headerlink" title="2、如何从外部读取函数内部的局部变量？"></a>2、如何从外部读取函数内部的局部变量？</h3><p>出于种种原因，我们有时候需要获取到函数内部的局部变量。但是，上面已经说过了，正常情况下，这是办不到的！只有通过变通的方法才能实现。</p>
-<p>那就是在函数内部，再定义一个函数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">f1</span></span>()&#123;</span><br><span class="line"></span><br><span class="line">　　　　var n=999;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">function</span> <span class="function"><span class="title">f2</span></span>()&#123;</span><br><span class="line">　　　　　　alert(n); // 999</span><br><span class="line">　　　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在上面的代码中，函数f2就被包括在函数f1内部，这时f1内部的所有局部变量，对f2都是可见的。但是反过来就不行，f2内部的局部变量，对f1就是不可见的。</p>
-<p>这就是Javascript语言特有的<code>&quot;链式作用域&quot;结构（chain scope）</code>，</p>
-<p>子对象会一级一级地向上寻找所有父对象的变量。所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</p>
-<p>既然f2可以读取f1中的局部变量，那么只要把f2作为返回值，我们不就可以在f1外部读取它的内部变量了吗！</p>
-<h3 id="3、闭包的概念"><a href="#3、闭包的概念" class="headerlink" title="3、闭包的概念"></a>3、闭包的概念</h3><p>上面代码中的f2函数，就是闭包。</p>
-<p>各种专业文献的闭包定义都非常抽象，我的理解是: <code>闭包就是能够读取其他函数内部变量的函数。</code></p>
-<p>由于在javascript中，只有函数内部的子函数才能读取局部变量，所以说，<code>闭包可以简单理解成“定义在一个函数内部的函数</code>。</p>
-<p>所以，<code>在本质上，闭包是将函数内部和函数外部连接起来的桥梁。</code></p>
-<h3 id="4、闭包的用途"><a href="#4、闭包的用途" class="headerlink" title="4、闭包的用途"></a>4、闭包的用途</h3><p>闭包可以用在许多地方。它的最大用处有两个，<code>一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中，不会在f1调用后被自动清除。</code></p>
-<p>为什么会这样呢？原因就在于f1是f2的父函数，而f2被赋给了一个全局变量，这导致f2始终在内存中，而f2的存在依赖于f1，因此f1也始终在内存中，不会在调用结束后，被垃圾回收机制（garbage collection）回收。</p>
-<p>这段代码中另一个值得注意的地方，就是”nAdd=function(){n+=1}”这一行，首先在nAdd前面没有使用var关键字，因此nAdd是一个全局变量，而不是局部变量。其次，nAdd的值是一个匿名函数（anonymous function），而这个匿名函数本身也是一个闭包，所以nAdd相当于是一个setter，可以在函数外部对函数内部的局部变量进行操作。</p>
-<h3 id="5、使用闭包的注意点"><a href="#5、使用闭包的注意点" class="headerlink" title="5、使用闭包的注意点"></a>5、使用闭包的注意点</h3><p>（1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
-<p>（2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+        <h4 id="两者中文意思上区别，attribute为特性的意思，而property为属性的意思。"><a href="#两者中文意思上区别，attribute为特性的意思，而property为属性的意思。" class="headerlink" title="两者中文意思上区别，attribute为特性的意思，而property为属性的意思。"></a>两者中文意思上区别，attribute为特性的意思，而property为属性的意思。</h4><p>attribute是一个特性节点，每个DOM元素都有一个对应的attributes属性来存放所有的attribute节点，attributes是一个类数组的容器，说得准确点就是NameNodeMap，总之就是一个类似数组但又和数组不太一样的容器。attributes的每个数字索引以名值对(name=”value”)的形式存放了一个attribute节点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot; id=&quot;box&quot; gameid=&quot;880&quot;&gt;hello&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="上面的div元素的HTML代码中有class、id还有自定义的gameid，这些特性都存放在attributes中，类似下面的形式："><a href="#上面的div元素的HTML代码中有class、id还有自定义的gameid，这些特性都存放在attributes中，类似下面的形式：" class="headerlink" title="上面的div元素的HTML代码中有class、id还有自定义的gameid，这些特性都存放在attributes中，类似下面的形式："></a>上面的div元素的HTML代码中有class、id还有自定义的gameid，这些特性都存放在attributes中，类似下面的形式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ class=&quot;box&quot;, id=&quot;box&quot;, gameid=&quot;880&quot; ]</span><br></pre></td></tr></table></figure>
+<p>可以这样来访问attribute节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var elem = document.getElementById( &apos;box&apos; );</span><br><span class="line">console.log( elem.attributes[0].name ); // class</span><br><span class="line">console.log( elem.attributes[0].value ); // box</span><br></pre></td></tr></table></figure></p>
+<p>但是IE6-7将很多东西都存放在attributes中，上面的访问方法和标准浏览器的返回结果又不同。通常要获取一个attribute节点直接用getAttribute方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(elem.getAttribute(&apos;gameid&apos;)); //880</span><br></pre></td></tr></table></figure></p>
+<p>要设置一个attribute节点使用setAttribute方法，要删除就用removeAttribute:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elem.setAttribute(&apos;testAttr&apos;, &apos;testVal&apos;);</span><br><span class="line">console.log( elem.removeAttribute(&apos;gameid&apos;) ); // undefined</span><br></pre></td></tr></table></figure></p>
+<p>attributes是会随着添加或删除attribute节点动态更新的。<br>property就是一个属性，如果把DOM元素看成是一个普通的Object对象，那么property就是一个以名值对(name=”value”)的形式存放在Object中的属性。要添加和删除property也简单多了，和普通的对象没啥分别：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">elem.gameid = 880; // 添加</span><br><span class="line">console.log( elem.gameid ) // 获取</span><br><span class="line">delete elem.gameid // 删除</span><br></pre></td></tr></table></figure>
+<p>之所以attribute和property容易混倄在一起的原因是，很多attribute节点还有一个相对应的property属性，比如上面的div元素的id和class既是attribute，也有对应的property，不管使用哪种方法都可以访问和修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log( elem.getAttribute(&apos;id&apos;) ); // box</span><br><span class="line">console.log( elem.id ); // box</span><br><span class="line">elem.id = &apos;hello&apos;;</span><br><span class="line">console.log( elem.getAttribute(&apos;id&apos;) ); // hello</span><br></pre></td></tr></table></figure>
+<p>但是对于自定义的attribute节点，或者自定义property，两者就没有关系了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log( elem.getAttribute(&apos;gameid&apos;) ); // 880</span><br><span class="line">console.log( elem.gameid ); // undefined</span><br><span class="line">elem.areaid = &apos;900&apos;;</span><br><span class="line">console.log( elem.getAttribute(&apos;areaid&apos;) ) // null</span><br></pre></td></tr></table></figure></p>
+<p>对于IE6-7来说，没有区分attribute和property：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log( elem.getAttribute(&apos;gameid&apos;) ); // 880</span><br><span class="line">console.log( elem.gameid ); // 880</span><br><span class="line">elem.areaid = &apos;900&apos;;</span><br><span class="line">console.log( elem.getAttribute(&apos;areaid&apos;) ) // 900</span><br></pre></td></tr></table></figure></p>
+<p>很多新手朋友估计都很容易掉进这个坑中。<br>DOM元素一些默认常见的attribute节点都有与之对应的property属性，比较特殊的是一些值为Boolean类型的property，如一些表单元素：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;radio&quot; checked=&quot;checked&quot; id=&quot;raido&quot;&gt;</span><br><span class="line">var radio = document.getElementById( &apos;radio&apos; );</span><br><span class="line">console.log( radio.getAttribute(&apos;checked&apos;) ); // checked</span><br><span class="line">console.log( radio.checked ); // true</span><br></pre></td></tr></table></figure></p>
+<p>对于这些特殊的attribute节点，只有存在该节点，对应的property的值就为true，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;radio&quot; checked=&quot;anything&quot; id=&quot;raido&quot;&gt;</span><br><span class="line">var radio = document.getElementById( &apos;radio&apos; );</span><br><span class="line">console.log( radio.getAttribute(&apos;checked&apos;) ); // anything</span><br><span class="line">console.log( radio.checked ); // true</span><br></pre></td></tr></table></figure></p>
+<p>最后为了更好的区分attribute和property，基本可以总结为attribute节点都是在HTML代码中可见的，而property只是一个普通的名值对属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// gameid和id都是attribute节点</span><br><span class="line">// id同时又可以通过property来访问和修改</span><br><span class="line">&lt;div gameid=&quot;880&quot; id=&quot;box&quot;&gt;hello&lt;/div&gt; </span><br><span class="line">// areaid仅仅是property</span><br><span class="line">elem.areaid = 900;</span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -207,15 +202,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/05/16/JS的for循环总是弹出最后一个值得解决方法/" class="pre-post btn btn-default" title='JS的for循环总是弹出最后一个值得解决方法'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">JS的for循环总是弹出最后一个值得解决方法</span>
-        </a>
     
-    
-        <a href="/2018/05/15/详解call-apply-和bind/" class="next-post btn btn-default" title='详解call(),apply()和bind()'>
+        <a href="/2018/05/21/设置和获取cookie-sessionstorage-localstorage/" class="next-post btn btn-default" title='设置和获取sessionstorage,localstorage'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">详解call(),apply()和bind()</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">设置和获取sessionstorage,localstorage</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
