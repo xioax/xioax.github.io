@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Archives | 日月星辰海-前端永不止境</title>
+<title>js中shift(),pop(),unshift(),push()方法理解 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -127,81 +127,102 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div id="main">
-  <div id="post-list">
-    <ul class="archives-post-list">
-    	<h1 class="info">年 月</h1>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="js中shift(),pop(),unshift(),push()方法理解">
+            
+	            js中shift(),pop(),unshift(),push()方法理解
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
         
-          <li class="post-items" _href="/2018/05/25/js中shift-pop-unshift-push-方法理解/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/25/js中shift-pop-unshift-push-方法理解/"> js中shift(),pop(),unshift(),push()方法理解 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/25/attribute和property之间的区别/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/25/attribute和property之间的区别/"> attribute和property之间的区别 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/21/设置和获取cookie-sessionstorage-localstorage/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/21/设置和获取cookie-sessionstorage-localstorage/"> 设置和获取sessionstorage,localstorage </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/21/javascript中attachEvent-和addEventListener之间区别/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/21/javascript中attachEvent-和addEventListener之间区别/"> javascript中attachEvent()和addEventListener之间区别 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/17/overflow-hidden用法/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/17/overflow-hidden用法/"> overflow:hidden用法 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/17/js创建对象的多种形式/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/17/js创建对象的多种形式/"> js创建对象的多种形式 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/16/React-Electron-antd-Less集成环境配置/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/16/React-Electron-antd-Less集成环境配置/"> React+Electron+antd+Less集成环境配置 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/16/JS的for循环总是弹出最后一个值得解决方法/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/16/JS的for循环总是弹出最后一个值得解决方法/"> JS的for循环总是弹出最后一个值得解决方法 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/16/对闭包的理解/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/16/对闭包的理解/"> 对闭包的理解 </a>
-            </h3>  
-          </li>
-        
-          <li class="post-items" _href="/2018/05/15/详解call-apply-和bind/">
-            <h3 class="post-item-title">
-            	<a href="/2018/05/15/详解call-apply-和bind/"> 详解call(),apply()和bind() </a>
-            </h3>  
-          </li>
-        
-    </ul>
-  </div>
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/05/25</span>
+        </span>
+    
 </div>
 
-    <nav class="pagination" role="navigation">
-        <div id="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class='fa fa-angle-right'></i></a>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="对shift-pop-分一组理解"><a href="#对shift-pop-分一组理解" class="headerlink" title="对shift(),pop()分一组理解"></a>对shift(),pop()分一组理解</h2><p>shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.shift()</span><br></pre></td></tr></table></figure>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>数组原来的第一个元素的值。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>如果数组是空的，那么 shift() 方法将不进行任何操作，返回 undefined 值。请注意，该方法不创建新数组，而是直接修改原有的 arrayObject。</p>
+<p>pop() 方法用于删除并返回数组的最后一个元素。</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.pop()</span><br></pre></td></tr></table></figure>
+<h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3><p>arrayObject的最后一个元素。</p>
+<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>pop()方法将删除arrayObject的最后一个元素，把数组长度减1，并且返回它删除的元素的值，如果数组已经为空，则pop()不会改变数组，并返回undefined值。</p>
+<h2 id="对unshift-push-分一组理解"><a href="#对unshift-push-分一组理解" class="headerlink" title="对unshift(),push 分一组理解"></a>对unshift(),push 分一组理解</h2><p>unshift() 方法用于向数组前面添加一个或者多个元素，并返回新的长度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arraryObject.unshift(newelem1,newelem2,...,newelemx)</span><br></pre></td></tr></table></figure></p>
+<p>newelem1为第一个元素，newelem2为第二个元素，newelemx为第x个元素</p>
+<h3 id="返回值-2"><a href="#返回值-2" class="headerlink" title="返回值"></a>返回值</h3><p>arrayObject的新长度</p>
+<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>unshift() 方法将把它的参数插入 arrayObject 的头部，并将已经存在的元素顺次地移到较高的下标处，以便留出空间。该方法的第一个参数将成为数组的新元素 0，如果还有第二个参数，它将成为新的元素 1，以此类推。</p>
+<p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arraryObject.push(newelem1,newelem2,...,newelemx)</span><br></pre></td></tr></table></figure></p>
+<p>newelem1为第一个元素，newelem2为第二个元素，newelemx为第x个元素</p>
+<h3 id="返回值-3"><a href="#返回值-3" class="headerlink" title="返回值"></a>返回值</h3><p>把指定的值添加到数组后的新长度。</p>
+<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><p>push() 方法可把它的参数顺序添加到 arrayObject 的尾部。它直接修改 arrayObject，<br>而不是创建一个新的数组。push() 方法和 pop() 方法使用数组提供的先进后出栈的功能。</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
         </div>
-    </nav>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/05/25/attribute和property之间的区别/" class="next-post btn btn-default" title='attribute和property之间的区别'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">attribute和property之间的区别</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
 
 
 
