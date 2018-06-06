@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="日月星辰海-前端永不止境">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>vue+typescript+element-ui项目搭建 | 日月星辰海-前端永不止境</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='wwj'>
+            <img src="/img/logo.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="bg-title"></div>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="vue+typescript+element-ui项目搭建">
+            
+	            vue+typescript+element-ui项目搭建
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/ ">
+             
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/06/06</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h4 id="之前用vue搭建项目没有涉及到typescript-趁现在闲暇，就试试vue-typescript-element-ui搭建项目，在搭建过程中遇到不少的坑，然后我将他们一一记录下来。方便搭建时候参考，下面开始搭建项目吧。"><a href="#之前用vue搭建项目没有涉及到typescript-趁现在闲暇，就试试vue-typescript-element-ui搭建项目，在搭建过程中遇到不少的坑，然后我将他们一一记录下来。方便搭建时候参考，下面开始搭建项目吧。" class="headerlink" title="之前用vue搭建项目没有涉及到typescript,趁现在闲暇，就试试vue+typescript+element-ui搭建项目，在搭建过程中遇到不少的坑，然后我将他们一一记录下来。方便搭建时候参考，下面开始搭建项目吧。"></a>之前用vue搭建项目没有涉及到typescript,趁现在闲暇，就试试vue+typescript+element-ui搭建项目，在搭建过程中遇到不少的坑，然后我将他们一一记录下来。方便搭建时候参考，下面开始搭建项目吧。</h4><h2 id="常规环境搭建"><a href="#常规环境搭建" class="headerlink" title="常规环境搭建"></a>常规环境搭建</h2><h4 id="参考官方给的手脚架vue-cli-当然相信你对node-js-npm-git一定有一点了解"><a href="#参考官方给的手脚架vue-cli-当然相信你对node-js-npm-git一定有一点了解" class="headerlink" title="参考官方给的手脚架vue-cli,当然相信你对node.js npm git一定有一点了解."></a>参考官方给的手脚架vue-cli,当然相信你对node.js npm git一定有一点了解.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装 vue-cli</span><br><span class="line">$ npm install -g vue-cli</span><br><span class="line"></span><br><span class="line"># 创建一个基于 webpack 模板的新项目</span><br><span class="line">$ vue init webpack my-project</span><br><span class="line">$ cd my-project</span><br><span class="line"></span><br><span class="line"># 安装依赖，这里用cnpm可能会丢包</span><br><span class="line">$ npm install</span><br><span class="line"></span><br><span class="line"># 然后就可以运行看到界面了</span><br><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
+<h2 id="现在开始初始化项目"><a href="#现在开始初始化项目" class="headerlink" title="现在开始初始化项目"></a>现在开始初始化项目</h2><h4 id="首先根据vue-cli建立webpack项目，这里我都打开vue-router-eslint等，根据自己的情况看。"><a href="#首先根据vue-cli建立webpack项目，这里我都打开vue-router-eslint等，根据自己的情况看。" class="headerlink" title="首先根据vue-cli建立webpack项目，这里我都打开vue-router,eslint等，根据自己的情况看。"></a>首先根据vue-cli建立webpack项目，这里我都打开vue-router,eslint等，根据自己的情况看。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装 vue-cli</span><br><span class="line">$ npm install -g vue-cli</span><br></pre></td></tr></table></figure>
+<h4 id="一路enter下来，建立初始化项目"><a href="#一路enter下来，建立初始化项目" class="headerlink" title="一路enter下来，建立初始化项目"></a>一路enter下来，建立初始化项目</h4><p><img src="/img/type1.png" alt="type1"><br><img src="/img/type2.png" alt="type2"></p>
+<h3 id="安装TypeScript相关依赖和项目其余依赖，用npm或cnpm"><a href="#安装TypeScript相关依赖和项目其余依赖，用npm或cnpm" class="headerlink" title="安装TypeScript相关依赖和项目其余依赖，用npm或cnpm"></a>安装TypeScript相关依赖和项目其余依赖，用npm或cnpm</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cd /vue-typescript</span><br><span class="line"># npm install typescript ts-loader --save-dev</span><br><span class="line"># npm install</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h4 id="修改目录下bulid-webpack-base-conf-js文件，在文件内module-gt-rules添加以下规则"><a href="#修改目录下bulid-webpack-base-conf-js文件，在文件内module-gt-rules添加以下规则" class="headerlink" title="修改目录下bulid/webpack.base.conf.js文件，在文件内module&gt;rules添加以下规则"></a>修改目录下bulid/webpack.base.conf.js文件，在文件内module&gt;rules添加以下规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: /\.tsx?$/,</span><br><span class="line">  loader: &apos;ts-loader&apos;,</span><br><span class="line">  exclude: /node_modules/,</span><br><span class="line">  options: &#123;</span><br><span class="line">    appendTsSuffixTo: [/\.vue$/],</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="在src目录下新建一个文件vue-shims-d-ts，用于识别单文件vue内的ts代码"><a href="#在src目录下新建一个文件vue-shims-d-ts，用于识别单文件vue内的ts代码" class="headerlink" title="在src目录下新建一个文件vue-shims.d.ts，用于识别单文件vue内的ts代码"></a>在src目录下新建一个文件vue-shims.d.ts，用于识别单文件vue内的ts代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">declare module &quot;*.vue&quot; &#123;</span><br><span class="line">  import Vue from &quot;vue&quot;;</span><br><span class="line">  export default Vue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="在项目根目录下建立TypeScript配置文件tsconfig-json"><a href="#在项目根目录下建立TypeScript配置文件tsconfig-json" class="headerlink" title="在项目根目录下建立TypeScript配置文件tsconfig.json"></a>在项目根目录下建立TypeScript配置文件tsconfig.json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;include&quot;: [</span><br><span class="line">  &quot;src/**/*&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;exclude&quot;: [</span><br><span class="line">  &quot;node_modules&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">  &quot;allowSyntheticDefaultImports&quot;: true,</span><br><span class="line">  &quot;experimentalDecorators&quot;: true,</span><br><span class="line">  &quot;allowJs&quot;: true,</span><br><span class="line">  &quot;module&quot;: &quot;es2015&quot;,</span><br><span class="line">  &quot;target&quot;: &quot;es5&quot;,</span><br><span class="line">  &quot;moduleResolution&quot;: &quot;node&quot;,</span><br><span class="line">  &quot;isolatedModules&quot;: true,</span><br><span class="line">  &quot;lib&quot;: [</span><br><span class="line">   &quot;dom&quot;,</span><br><span class="line">   &quot;es5&quot;,</span><br><span class="line">   &quot;es2015.promise&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;sourceMap&quot;: true,</span><br><span class="line">  &quot;pretty&quot;: true</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重命名src下的main-js为main-ts"><a href="#重命名src下的main-js为main-ts" class="headerlink" title="重命名src下的main.js为main.ts"></a>重命名src下的main.js为main.ts</h3><h3 id="修改webpack-base-conf-js下的entry-gt-app为’-src-main-ts’"><a href="#修改webpack-base-conf-js下的entry-gt-app为’-src-main-ts’" class="headerlink" title="修改webpack.base.conf.js下的entry&gt;app为’./src/main.ts’"></a>修改webpack.base.conf.js下的entry&gt;app为’./src/main.ts’</h3><h3 id="修改src下的App-vue文件，在"><a href="#修改src下的App-vue文件，在" class="headerlink" title="修改src下的App.vue文件，在"></a>修改src下的App.vue文件，在</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script lang=&quot;ts&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="下一步进阶"><a href="#下一步进阶" class="headerlink" title="下一步进阶"></a>下一步进阶</h2><h4 id="配置官方推荐的vue-class-component，https-cn-vuejs-org-v2-guide-typescript-html"><a href="#配置官方推荐的vue-class-component，https-cn-vuejs-org-v2-guide-typescript-html" class="headerlink" title="配置官方推荐的vue-class-component，https://cn.vuejs.org/v2/guide/typescript.html"></a>配置官方推荐的vue-class-component，<a href="https://cn.vuejs.org/v2/guide/typescript.html" target="_blank" rel="noopener">https://cn.vuejs.org/v2/guide/typescript.html</a></h4><h4 id="安装开发依赖"><a href="#安装开发依赖" class="headerlink" title="安装开发依赖"></a>安装开发依赖</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev vue-class-component</span><br></pre></td></tr></table></figure>
+<h4 id="这个时候修改HelloWorld组件"><a href="#这个时候修改HelloWorld组件" class="headerlink" title="这个时候修改HelloWorld组件"></a>这个时候修改HelloWorld组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script lang=&quot;ts&quot;&gt;</span><br><span class="line">  import Vue from &apos;vue&apos;</span><br><span class="line">  import Component from &apos;vue-class-component&apos;</span><br><span class="line">  @Component</span><br><span class="line">  export default class HelloWorld extends Vue &#123;</span><br><span class="line">    msg: string = &apos;this is a typescript project now&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="使用vue-class-component后，初始数据可以直接声明为实例的属性，而不需放入data-return-中，组件方法也可以直接声明为实例的方法，如官方实例，更多使用方法可以参考其官方文档"><a href="#使用vue-class-component后，初始数据可以直接声明为实例的属性，而不需放入data-return-中，组件方法也可以直接声明为实例的方法，如官方实例，更多使用方法可以参考其官方文档" class="headerlink" title="使用vue-class-component后，初始数据可以直接声明为实例的属性，而不需放入data() {return{}}中，组件方法也可以直接声明为实例的方法，如官方实例，更多使用方法可以参考其官方文档"></a>使用vue-class-component后，初始数据可以直接声明为实例的属性，而不需放入data() {return{}}中，组件方法也可以直接声明为实例的方法，如官方实例，更多使用方法可以参考其官方文档</h4><h4 id="https-github-com-vuejs-vue-class-component-vue-class-component"><a href="#https-github-com-vuejs-vue-class-component-vue-class-component" class="headerlink" title="https://github.com/vuejs/vue-class-component#vue-class-component"></a><a href="https://github.com/vuejs/vue-class-component#vue-class-component" target="_blank" rel="noopener">https://github.com/vuejs/vue-class-component#vue-class-component</a></h4><h2 id="最后启动项目"><a href="#最后启动项目" class="headerlink" title="最后启动项目"></a>最后启动项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>如果没有ts-loader版本兼容性问题，就会成功，如下图<br><img src="/img/type3.png" alt="type3"></p>
+<h2 id="注意这里如果出现报错，如下图"><a href="#注意这里如果出现报错，如下图" class="headerlink" title="注意这里如果出现报错，如下图"></a>注意这里如果出现报错，如下图</h2><p><img src="/img/type4.png" alt="type4"></p>
+<h4 id="这是用ts-loader版本太高，造成的兼容性问题，将ts-loader的版本改成3-3-1。"><a href="#这是用ts-loader版本太高，造成的兼容性问题，将ts-loader的版本改成3-3-1。" class="headerlink" title="这是用ts-loader版本太高，造成的兼容性问题，将ts-loader的版本改成3.3.1。"></a>这是用ts-loader版本太高，造成的兼容性问题，将ts-loader的版本改成3.3.1。</h4><h4 id="在package-json-文件中找到-ts-loader修改就可以了，如下图"><a href="#在package-json-文件中找到-ts-loader修改就可以了，如下图" class="headerlink" title="在package.json 文件中找到 ts-loader修改就可以了，如下图"></a>在package.json 文件中找到 ts-loader修改就可以了，如下图</h4><p>![type5][/img/type5.png]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line"># 然后运行</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h4 id="到这里vue-typescript项目就搭建起来。接下来就是引用element-ui"><a href="#到这里vue-typescript项目就搭建起来。接下来就是引用element-ui" class="headerlink" title="到这里vue-typescript项目就搭建起来。接下来就是引用element-ui"></a>到这里vue-typescript项目就搭建起来。接下来就是引用element-ui</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element-ui --save</span><br></pre></td></tr></table></figure>
+<h4 id="修改main-ts-引入element-ui"><a href="#修改main-ts-引入element-ui" class="headerlink" title="修改main.ts,引入element-ui"></a>修改main.ts,引入element-ui</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import App from &apos;./App.vue&apos;</span><br><span class="line">import ElementUI from &apos;element-ui&apos;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;</span><br><span class="line">import router from &apos;./router&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI);</span><br><span class="line">Vue.config.productionTip = false</span><br><span class="line"></span><br><span class="line">/* eslint-disable no-new */</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  router,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="到这里一个vue-typescript-element-ui项目就搭建成功。"><a href="#到这里一个vue-typescript-element-ui项目就搭建成功。" class="headerlink" title="到这里一个vue+typescript-element-ui项目就搭建成功。"></a>到这里一个vue+typescript-element-ui项目就搭建成功。</h3><h4 id="当然这里我们还可以用到vuex-这个vue的状态管理模式。更方便我们开发。"><a href="#当然这里我们还可以用到vuex-这个vue的状态管理模式。更方便我们开发。" class="headerlink" title="当然这里我们还可以用到vuex,这个vue的状态管理模式。更方便我们开发。"></a>当然这里我们还可以用到vuex,这个vue的状态管理模式。更方便我们开发。</h4><h3 id="如果按照文章没有配置出来，可以参考此-vue-typescript-element-ui"><a href="#如果按照文章没有配置出来，可以参考此-vue-typescript-element-ui" class="headerlink" title="如果按照文章没有配置出来，可以参考此 vue-typescript-element-ui"></a>如果按照文章没有配置出来，可以参考此 <a href="https://github.com/xioax/vue-typescript-element-ui" target="_blank" rel="noopener">vue-typescript-element-ui</a></h3>
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/06/05/vue-typescript建立项目ts-loader兼容的问题/" class="next-post btn btn-default" title='vue+typescript建立项目ts-loader兼容的问题'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">vue+typescript建立项目ts-loader兼容的问题</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	<!--PC和WAP自适应版-->
+<div id="SOHUCS"></div>
+<script type="text/javascript">
+	(function(){var appid='cyt8KmUC1';var conf='prod_855a68d3b3d91855360a6215672a505a';var width=window.innerWidth||document.documentElement.clientWidth;if(width<960){window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id='+appid+'&conf='+conf+'"><\/script>');}else{var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}
+	c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});}})();
+</script>	
+
+    </div>
+
+
+
+
+
+                </main>
+                
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">    
+        <h3 class="title">Search</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget notification">
+        <h3 class="title">网站公告</h3>
+        <div>
+            <p>主题Snippet v1.2.0版本已经上线！欢迎更新~ <br/>
+主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
+<hr/>接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request<br/>支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Social</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/xioax" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="微博" target="_blank">
+			    	<i class="weibo fa fa-weibo"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="QQ群" target="_blank">
+			    	<i class="users fa fa-users"></i>
+			    </a>
+            
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Archives</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/"><i class="fa" aria-hidden="true">June 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/"><i class="fa" aria-hidden="true">May 2018</i></a><span class="archive-list-count">17</span></li></ul>
+    </div>
+
+
+        
+        
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Friends</h3>
+        <div class="content friends-link">
+        
+            <a href="http://xioax/github.io" class="fa" target="_blank">个人博客</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row" style="text-align: center;margin: 30px 0px;">
+            <span>王万军的博客,<br/>前端路上永不止步。</span>
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">wangwanjun</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
