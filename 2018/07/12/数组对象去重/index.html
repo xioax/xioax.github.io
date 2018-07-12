@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>overflow:hidden用法 | 日月星辰海-前端永不止境</title>
+<title>数组对象去重 | 日月星辰海-前端永不止境</title>
 
 
     <link rel="alternate" href="/atom.xml" title="日月星辰海-前端永不止境" type="application/atom+xml">
@@ -131,9 +131,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="overflow:hidden用法">
+        <h1 id="数组对象去重">
             
-	            overflow:hidden用法
+	            数组对象去重
             
         </h1>
         <div class="post-meta">
@@ -161,7 +161,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/05/17</span>
+            <span class="date-meta">2018/07/12</span>
         </span>
     
 </div>
@@ -171,16 +171,8 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="overflow-hidden用法，不仅仅是隐藏溢出"><a href="#overflow-hidden用法，不仅仅是隐藏溢出" class="headerlink" title="overflow: hidden用法，不仅仅是隐藏溢出"></a>overflow: hidden用法，不仅仅是隐藏溢出</h2><p>overflow:hidden是大家常用到的CSS样式，但是大多数人对这个样式的理解仅仅局限于隐藏溢出，而对于清除浮动这个含义不是很了解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">        #div1&#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            /*height: 50px;*/</span><br><span class="line">            padding: 10px 20px 20px 10px;</span><br><span class="line">            background: red;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line">        #div2&#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background: green;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;div1&quot; &gt;</span><br><span class="line">    &lt;div id=&quot;div2&quot; &gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图："><a href="#图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图：" class="headerlink" title="图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图："></a>图中代码定义了两个div，并且子div是规定左浮动的。不难想像浏览器中打开的效果图：</h3><p><img src="/img/tu1.png" alt="logo"></p>
-<p>当父div没有规定height值，子div浮动后，父div只剩下padding-top+padding-bottom的30px.</p>
-<p>如何让子div再次将父div的高度撑开呢？固然将父div也浮动起来是比较常用的做法，其实还可以使用overflower:hidden来清除浮动带来的影响。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    /*height: 50px;*/</span><br><span class="line">    padding: 10px 20px 20px 10px;</span><br><span class="line">    background: red;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然，我们以前用的最多的还是使用overflow:hidden来隐藏子元素相对于父元素的超界溢出，如下所示。<br><img src="/img/tu2.png" alt="logo"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    padding: 10px 20px 20px 10px;</span><br><span class="line">    background: red;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>给父div加上固定高度后，再使用overflow: hidden将会隐藏掉子元素超出的那一部分，如下图：</p>
-<h3 id="因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow-hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。"><a href="#因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow-hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。" class="headerlink" title="因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow: hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。"></a>因此我们可以尝试这样总结：当父元素的高度是靠子元素撑开的时候，子元素浮动时，则在父元素使用overflow: hidden可以清除浮动，使得父元素的高度依旧是靠子元素撑开。</h3><h3 id="当父元素自身设置了height属性值，则在父元素使用overflow-hidden可以使子元素超出父元素的那部分隐藏。"><a href="#当父元素自身设置了height属性值，则在父元素使用overflow-hidden可以使子元素超出父元素的那部分隐藏。" class="headerlink" title="当父元素自身设置了height属性值，则在父元素使用overflow: hidden可以使子元素超出父元素的那部分隐藏。"></a>当父元素自身设置了height属性值，则在父元素使用overflow: hidden可以使子元素超出父元素的那部分隐藏。</h3>
+        <h3 id="数组对象去重"><a href="#数组对象去重" class="headerlink" title="数组对象去重"></a>数组对象去重</h3><h4 id="js处理数组对象去重的方法"><a href="#js处理数组对象去重的方法" class="headerlink" title="js处理数组对象去重的方法"></a>js处理数组对象去重的方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;数组对象去重&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">	var oldArr = [</span><br><span class="line">    &#123;id:1,name:&quot;zhangs&quot;,age:18,contact_id:1&#125;,</span><br><span class="line">    &#123;id:2,name:&quot;zhangs&quot;,age:18,contact_id:2&#125;,</span><br><span class="line">    &#123;id:3,name:&quot;zhangs&quot;,age:18,contact_id:3&#125;,</span><br><span class="line">    &#123;id:4,name:&quot;zhangs&quot;,age:18,contact_id:14&#125;,</span><br><span class="line">    &#123;id:1,name:&quot;zhangs&quot;,age:18,contact_id:3&#125;,</span><br><span class="line">    &#123;id:1,name:&quot;zhangs&quot;,age:18,contact_id:2&#125;,</span><br><span class="line">    &#123;id:5,name:&quot;zhangs&quot;,age:18,contact_id:1&#125;</span><br><span class="line">];//原数据数组</span><br><span class="line"></span><br><span class="line">var allArr = [];//新数组</span><br><span class="line">for(var i=0;i&lt;oldArr.length;i++)&#123;</span><br><span class="line">　　var flag = true;</span><br><span class="line">　　for(var j=0;j&lt;allArr.length;j++)&#123;</span><br><span class="line">　　　　if(oldArr[i].id == allArr[j].id)&#123;</span><br><span class="line">　　　　　　flag = false;</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;; </span><br><span class="line">　　if(flag)&#123;</span><br><span class="line">　　　　allArr.push(oldArr[i]);</span><br><span class="line">　　&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">console.log(allArr, &apos;000 000&apos;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     <div class="post-footer">
@@ -197,15 +189,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/05/21/javascript中attachEvent-和addEventListener之间区别/" class="pre-post btn btn-default" title='javascript中attachEvent()和addEventListener之间区别'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">javascript中attachEvent()和addEventListener之间区别</span>
-        </a>
     
-    
-        <a href="/2018/05/17/js创建对象的多种形式/" class="next-post btn btn-default" title='js创建对象的多种形式'>
+        <a href="/2018/06/30/js获取子节点父节点和兄弟节点的多种方式/" class="next-post btn btn-default" title='js获取子节点父节点和兄弟节点的多种方式'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">js创建对象的多种形式</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">js获取子节点父节点和兄弟节点的多种方式</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
